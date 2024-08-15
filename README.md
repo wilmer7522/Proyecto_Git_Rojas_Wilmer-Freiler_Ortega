@@ -10,7 +10,7 @@ Este proyecto proporciona una aplicación para gestionar campers, permitiendo re
 
 ### Instalación
 Deberas ejecutar el comando git clone para copiar el repositorio
-  [Link](https://github.com/wilmer7522/proyectoPython.git)
+  [Link](https://github.com/wilmer7522/Proyecto_Git_Rojas_Wilmer-Freiler_Ortega.git)
 
 ``` bash
 sudo apt install app
@@ -32,7 +32,7 @@ Este proyecto utiliza un archivo JSON para almacenar la información de los camp
 - Modificar Camper: Actualiza la información de un camper existente. Puedes cambiar el nombre, modelo o año.
 - Eliminar Camper: Permite eliminar un camper específico utilizando su ID.
 
-Hecho por ***Karen Lorena Cristancho Caceres***
+
 
 > Notas Importantes
 > [!NOTE]
@@ -51,5 +51,5 @@ Hecho por ***Karen Lorena Cristancho Caceres***
 > Asegúrate de manejar correctamente los IDs para evitar confusiones entre campers y para garantizar que las modificaciones y eliminaciones se realicen en el camper correcto.
 
 
-### hecho por wilmer rojas cc. 1034310528 y Freiler Ortega cc.1010075774
+### Hecho por wilmer rojas cc. 1034310528 y Freiler Ortega cc.1010075774
 gracias por su atención
