@@ -1,5 +1,7 @@
 import json
 
+from datetime import datetime
+
 
 def abrirArchivo():
     with open('info.json', encoding="utf-8") as openfile:
@@ -17,6 +19,17 @@ def guardarArchivo(miData):
 def guardarArchivoRuta(miDataRuta):
     with open("nuevasRutas.json", "w") as outfile:
         json.dump(miDataRuta, outfile)
+
+def abrirCamper():
+    mijsonCamper=[]
+    with open('Camper.json', 'r', encoding='utf=8') as openfile:
+        mijsonCamper = json.load(openfile)
+    return mijsonCamper
+
+def guardarCamper(dataCamper):
+    with open('Camper.json', 'w', encoding='utf=8') as outfile:
+        json.dump(dataCamper,outfile,indent=4)
+
 
 camper = []
 rutas = []
@@ -515,6 +528,7 @@ def listar_aprobados_y_reprobados(camper):
 # Definir contraseñas para el coordinador y el entrenador
 contrasena_coordinador = "1234"
 contrasena_trainer = "abcd"
+campe = abrirCamper()
 
 def menu():
     print("")
@@ -522,7 +536,36 @@ def menu():
     print("1. Camper")
     print("2. Trainer")
     print("3. Coordinador")
+    #########
+    print("4. Registro de entradas")
     opcion = int(input("Ingrese una opción: "))
+
+
+    conta = 1
+    if opcion == 4:
+        camp = abrirArchivo()
+        campe = abrirCamper()
+        eleid =int(input("ingrese id del camper "))
+        for i in camp:
+            print(i["inscripciones"][0]["id"])
+            fecha = datetime.today()
+            fe = fecha.isoformat()
+            eleid = camp[conta-1]["inscripciones"][0]["id"]
+            activi = input("ingrese Infomacion de la actividad: ")
+            print("actividad: Activo, Inactivo, Finalizada")
+            estado = input("ingrese actividad: ")
+            conta += 1
+
+        campe["camper"].appen({
+            "id": eleid,
+            "fecha": fe,
+            "actividad": activi,
+            "estado": estado
+        })
+
+    guardarCamper(campe)
+        
+
     
     if opcion == 1:
         print("Elija la opción deseada:")
@@ -532,7 +575,7 @@ def menu():
         else:
             print("Opción no válida.")
     
-    elif opcion == 2:
+    if opcion == 2:
         print("Ingrese la contraseña del trainer:")
         contrasena_ingresada = input()
         if contrasena_ingresada == contrasena_trainer:
@@ -545,7 +588,7 @@ def menu():
         else:
             print("Contraseña incorrecta. Acceso denegado.")
     
-    elif opcion == 3:
+    if opcion == 3:
         print("Ingrese la contraseña del coordinador:")
         contrasena_ingresada = input()
         if contrasena_ingresada == contrasena_coordinador:
@@ -576,7 +619,17 @@ def menu():
         else:
             print("Contraseña incorrecta. Acceso denegado.")
 
+    
+
+    
+
+
 camper = abrirArchivo()
 rutas = abrirArchivoRuta()
+
+
+    
 while True:
     menu()
+
+    
