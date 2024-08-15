@@ -1,7 +1,6 @@
 [
     {
         "inscripciones": [
-            {},
             {
                 "id": 1,
                 "nombre": "alexander",
@@ -230,7 +229,7 @@
             {
                 "id": 10,
                 "nombre": "Jhonatan",
-                "apellido": "Omaña",
+                "apellido": "Oma\u00f1a",
                 "identificacion": 123654789,
                 "direccion": "tibu",
                 "acudiente": "no tiene",
@@ -907,7 +906,7 @@
             {
                 "id": 35,
                 "nombre": "Lucia",
-                "apellido": "Irreño",
+                "apellido": "Irre\u00f1o",
                 "identificacion": 123654789,
                 "direccion": "tibu",
                 "acudiente": "no tiene",
