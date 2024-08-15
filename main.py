@@ -536,26 +536,26 @@ def menu():
     print("1. Camper")
     print("2. Trainer")
     print("3. Coordinador")
-    #########
+    ######### se empezo a crear el modulo de analisis de ingreso a la plataforma 
     print("4. Registro de entradas")
-    opcion = int(input("Ingrese una opción: "))
+    opcion = int(input("Ingrese una opción: ")) #se le le da una entrada al usuario para que elija una opcion
 
 
     conta = 1
-    if opcion == 4:
+    if opcion == 4: 
         camp = abrirArchivo()
         campe = abrirCamper()
-        eleid =int(input("ingrese id del camper "))
+        eleid =int(input("ingrese id del camper ")) # Se le pide la informacion del elmcamper al cual se le hara el seguimiento 
         
-        fecha = datetime.now()
+        fecha = datetime.now()#Esta servira para que quede el registro de la hora y fecha en el que el usuario ingreso 
         fe = fecha.isoformat()
-        eleid = camp[conta-1]["inscripciones"][0]["id"]
-        activi = input("ingrese Infomacion de la actividad: ")
-        print("actividad: Activo, Inactivo, Finalizada")
-        estado = input("ingrese actividad: ")
+        eleid = camp[conta-1]["inscripciones"][0]["id"]# Se creara un json de todos los usuarios que ingresaron y su actividad dentro de la plataforma 
+        activi = input("ingrese Infomacion de la actividad: ") #Se agregara la informscion de activida
+        print("actividad: Activo, Inactivo, Finalizada") # Se agregara el estao de el usuario 
+        estado = input("ingrese actividad: ")# Se agregara la actividad realizada por el usuario  
         conta += 1
 
-        campe.append({
+        campe.append({    # Modelo guia para  se guarde de esta formato  del json 
             "id": eleid,
             "fecha": fe,
             "actividad": activi,
@@ -563,7 +563,7 @@ def menu():
         })
 
     guardarCamper(campe)
-    print("guardado con Exito")
+    print("guardado con Exito") # Mostrara este print para confirmar que se guardo con exito 
         
 
     
