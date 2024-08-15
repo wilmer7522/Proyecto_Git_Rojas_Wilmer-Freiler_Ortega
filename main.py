@@ -546,17 +546,16 @@ def menu():
         camp = abrirArchivo()
         campe = abrirCamper()
         eleid =int(input("ingrese id del camper "))
-        for i in camp:
-            print(i["inscripciones"][0]["id"])
-            fecha = datetime.today()
-            fe = fecha.isoformat()
-            eleid = camp[conta-1]["inscripciones"][0]["id"]
-            activi = input("ingrese Infomacion de la actividad: ")
-            print("actividad: Activo, Inactivo, Finalizada")
-            estado = input("ingrese actividad: ")
-            conta += 1
+        
+        fecha = datetime.now()
+        fe = fecha.isoformat()
+        eleid = camp[conta-1]["inscripciones"][0]["id"]
+        activi = input("ingrese Infomacion de la actividad: ")
+        print("actividad: Activo, Inactivo, Finalizada")
+        estado = input("ingrese actividad: ")
+        conta += 1
 
-        campe["camper"].appen({
+        campe.append({
             "id": eleid,
             "fecha": fe,
             "actividad": activi,
@@ -564,6 +563,7 @@ def menu():
         })
 
     guardarCamper(campe)
+    print("guardado con Exito")
         
 
     
